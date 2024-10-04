@@ -1,0 +1,9 @@
+FROM ubuntu:18.04
+
+LABEL maintainer="Hlonela Mba"
+
+RUN groupadd -r hlon && useradd -r -g hlon hlon
+
+#environment variables
+ENV HOME /home/hlon
+ENV DEBIAN_FRONTEND=noninteractive

@@ -1,0 +1,353 @@
+Linux 5.15.153.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Fri Oct  4 06:39:58 SAST 2024
+
+  System load:  6.53                Processes:             40
+  Usage of /:   0.2% of 1006.85GB   Users logged in:       0
+  Memory usage: 19%                 IPv4 address for eth0: 172.21.158.199
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/sirmba/.hushlogin file.
+sirmba@LAPTOP-VTDAUGIQ:~$
+sirmba@LAPTOP-VTDAUGIQ:~$ ls
+SecuringDocker  one_  snap  text.txt
+sirmba@LAPTOP-VTDAUGIQ:~$ cd SecuringDocker/
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ ls
+preventPriveleEsAttacks
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ nano  preventPriveleEsAttacks
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ bash preventPriveleEsAttacks
+preventPriveleEsAttacks: line 1: FROM: command not found
+preventPriveleEsAttacks: line 3: LABEL: command not found
+preventPriveleEsAttacks: line 5: RUN: command not found
+preventPriveleEsAttacks: line 6: RUN: command not found
+preventPriveleEsAttacks: line 9: ENV: command not found
+preventPriveleEsAttacks: line 10: ENV: command not found
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ nano preve
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ nano preventPriveleEsAttacks
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker build . -ttest
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /home/sirmba/SecuringDocker/Dockerfile: no such file or directory
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ ls
+preventPriveleEsAttacks
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ nano Dockerfile
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ nano preventPriveleEsAttacks
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ nano Dockerfile
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker build . -t
+test
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  3.072kB
+Step 1/5 : FROM ubuntu:18.04
+18.04: Pulling from library/ubuntu
+7c457f213c76: Pull complete
+Digest: sha256:152dc042452c496007f07ca9127571cb9c29697f42acbfad72324b2bb2e43c98
+Status: Downloaded newer image for ubuntu:18.04
+ ---> f9a80a55f492
+Step 2/5 : LABEL maintainer="Hlonela Mba"
+ ---> Running in 7ec3ad854476
+Removing intermediate container 7ec3ad854476
+ ---> d01ac4c80cdb
+Step 3/5 : RUN groupadd -r hlon && useradd -r -g hlon hlon
+ ---> Running in 88590dc28e2c
+Removing intermediate container 88590dc28e2c
+ ---> f6cf368f92b8
+Step 4/5 : ENV HOME /home/hlon
+ ---> Running in 9c38d35e0785
+Removing intermediate container 9c38d35e0785
+ ---> ffc384dadef8
+Step 5/5 : ENV DEBIAN_FRONTEND=noninteractive
+ ---> Running in 8d8c6c0e8012
+Removing intermediate container 8d8c6c0e8012
+ ---> ab5dea426d77
+Successfully built ab5dea426d77
+Successfully tagged test:latest
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+test         latest    ab5dea426d77   50 seconds ago   63.5MB
+ubuntu       18.04     f9a80a55f492   16 months ago    63.2MB
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker run -u hlon -it --rm  ab5dea426d77 /bin/bash
+hlon@6b22a7af4a7d:/$ exit
+exit
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ nano Dockerfile
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker build . -ttest
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  3.072kB
+Step 1/6 : FROM ubuntu:18.04
+ ---> f9a80a55f492
+Step 2/6 : LABEL maintainer="Hlonela Mba"
+ ---> Using cache
+ ---> d01ac4c80cdb
+Step 3/6 : RUN groupadd -r hlon && useradd -r -g hlon hlon
+ ---> Using cache
+ ---> f6cf368f92b8
+Step 4/6 : RUN chsh -s /usr/sbin/nologin root
+ ---> Running in e419aefd2285
+Removing intermediate container e419aefd2285
+ ---> 7d9094d9b6b4
+Step 5/6 : ENV HOME /home/hlon
+ ---> Running in 6f3009dfeca0
+Removing intermediate container 6f3009dfeca0
+ ---> 228b4022db02
+Step 6/6 : ENV DEBIAN_FRONTEND=noninteractive
+ ---> Running in b6427ccfdc14
+Removing intermediate container b6427ccfdc14
+ ---> 1c7cd6c08ad7
+Successfully built 1c7cd6c08ad7
+Successfully tagged test:latest
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+test         latest    1c7cd6c08ad7   38 seconds ago   63.6MB
+<none>       <none>    ab5dea426d77   9 minutes ago    63.5MB
+ubuntu       18.04     f9a80a55f492   16 months ago    63.2MB
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker run -u hlon -it --rm  1c7cd6c08ad7 /bin/bash
+hlon@3fa69ab33146:/$ sudo root
+bash: sudo: command not found
+hlon@3fa69ab33146:/$ su root
+Password:
+su: Authentication failure
+hlon@3fa69ab33146:/$ exit
+exit
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+test         latest    1c7cd6c08ad7   9 minutes ago    63.6MB
+<none>       <none>    ab5dea426d77   18 minutes ago   63.5MB
+ubuntu       18.04     f9a80a55f492   16 months ago    63.2MB
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker run -it --
+rm --security-opt=no-new-privileges 1c7cd6c08ad7 /bin/bash
+root@55836dc3986d:/# exit
+exit
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker run -u hlon -it --rm --security-opt=no-new-privileges 1c7cd6c08ad7 /
+bin/bash
+hlon@d6eca9bbae93:/$ exit
+exit
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED
+SIZE
+test         latest    1c7cd6c08ad7   About an hour ago   63.6MB
+<none>       <none>    ab5dea426d77   About an hour ago   63.5MB
+ubuntu       18.04     f9a80a55f492   16 months ago       63.2MB
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker run --cap-
+drop all --cap-add NET_ADMIN -it --rm -u hlon 1c7cd6c08ad7/bin/bash
+Unable to find image '1c7cd6c08ad7/bin/bash:latest' locally
+docker: Error response from daemon: pull access denied for 1c7cd6c08ad7/bin/bash, repository does not exist or may require 'docker login': deniesirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker run --cap-drop all --cap-add NET_ADMIN -it --rm -u hlon 1c7cd6c08ad7 /bin/bash
+hlon@3c38c5c8354b:/$ exit
+exitba@LAPTOP-VTDAUGIQ:~/SecuringDocker$
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker run --cap-drop all --cap-add NET_ADMIN -it --rm -u hlon 1c7cd6c08ad7 /bin/bash
+hlon@573095dd8542:/$ exit
+exit
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker run --read
+-only -u hlon -it --rm 1c7cd6c08ad7 /bash
+docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: exec: "/bash": stat /bash: no such file or directory: unknown.
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker run --read-only -u hlon -it --rm 1c7cd6c08ad7 /bin/bash
+hlon@1563319d071e:/$ touch test
+touch: cannot touch 'test': Read-only file system
+hlon@1563319d071e:/$ exit
+exit
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker run --read-only --tmpfs /opt -u hlon -it --rm 1c7cd6c08ad7 /bin/bash
+hlon@084bad402c71:/$ pwd
+/
+hlon@084bad402c71:/$ touch test
+touch: cannot touch 'test': Read-only file system
+hlon@084bad402c71:/$ cd /opt
+hlon@084bad402c71:/opt$ touch test
+touch: cannot touch 'test': Permission denied
+hlon@084bad402c71:/opt$ ls
+hlon@084bad402c71:/opt$ exit
+exit
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+6a82207fba59   bridge    bridge    local
+12ea1202f21c   host      host      local
+bc14760983c7   none      null      local
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker network i
+spect bridge
+
+Usage:  docker network COMMAND
+
+Manage networks
+
+Commands:
+  connect     Connect a container to a network
+  create      Create a network
+  disconnect  Disconnect a container from a network
+  inspect     Display detailed information on one or more networks
+  ls          List networks
+  prune       Remove all unused networks
+  rm          Remove one or more networks
+
+Run 'docker network COMMAND --help' for more information on a command.
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker inspect 6a82207fba59
+[
+    {
+        "Name": "bridge",
+        "Id": "6a82207fba599fc0d3f12312a49411db7605f957bd3cc07e51ec31d690f7d0f6",
+        "Created": "2024-10-04T06:42:20.668750227+02:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.17.0.0/16",
+                    "Gateway": "172.17.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Options": {
+            "com.docker.network.bridge.default_bridge": "true",
+            "com.docker.network.bridge.enable_icc": "true",
+            "com.docker.network.bridge.enable_ip_masquerade": "true",
+            "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+            "com.docker.network.bridge.name": "docker0",
+            "com.docker.network.driver.mtu": "1500"
+        },
+        "Labels": {}
+    }
+]
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+test         latest    1c7cd6c08ad7   3 hours ago     63.6MB
+<none>       <none>    ab5dea426d77   3 hours ago     63.5MB
+ubuntu       18.04     f9a80a55f492   16 months ago   63.2MB
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ docker run -it --rm test /bin/bash
+root@cc6b56d9a9b9:/#
+root@cc6b56d9a9b9:/# ip a s
+bash: ip: command not found
+root@cc6b56d9a9b9:/# ipaddr
+bash: ipaddr: command not found
+root@cc6b56d9a9b9:/# apt update && apt install -y net-tool
+s
+Get:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [102 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
+Get:3 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [23.8 kB]
+Get:4 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [1688 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [102 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [102 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
+Get:8 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [3373 kB]
+Get:9 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [1637 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [30.8 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [3786 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [2411 kB]
+Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [1728 kB]
+Get:17 http://archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [64.0 kB]
+Get:18 http://archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [20.6 kB]
+Fetched 28.2 MB in 11s (2655 kB/s)
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  net-tools
+0 upgraded, 1 newly installed, 0 to remove and 1 not upgraded.
+Need to get 194 kB of archives.
+After this operation, 803 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 net-tools amd64 1.60+git20161116.90da8a0-1ubuntu1 [194 kB]
+Fetched 194 kB in 1s (150 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package net-tools.
+(Reading database ... 4050 files and directories currently installed.)
+Preparing to unpack .../net-tools_1.60+git20161116.90da8a0-1ubuntu1_amd64.deb ...
+Unpacking net-tools (1.60+git20161116.90da8a0-1ubuntu1) ..
+.
+Setting up net-tools (1.60+git20161116.90da8a0-1ubuntu1) ...
+root@cc6b56d9a9b9:/# ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.2  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:ac:11:00:02  txqueuelen 0  (Ethernet)
+        RX packets 6160  bytes 29364305 (29.3 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3472  bytes 292877 (292.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@cc6b56d9a9b9:/# exit
+exit
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ tmux
+.
+Setting up net-tools (1.60+git20161116.90da8a0-1ubuntu1) ...
+root@cc6b56d9a9b9:/# ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.2  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:ac:11:00:02  txqueuelen 0  (Ethernet)
+        RX packets 6160  bytes 29364305 (29.3 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3472  bytes 292877 (292.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@cc6b56d9a9b9:/# exit
+exit
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ tmux
+[detached (from session 0)]
+sirmba@LAPTOP-VTDAUGIQ:~/SecuringDocker$ tmux
+..
+root@cc6b56d9a9b9:/# ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.2  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:ac:11:00:02  txqueuelen 0  (Ethernet)
+        RX packets 6160  bytes 29364305 (29.3 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3472  bytes 292877 (292.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@cc6b56d9a9b9:/# exit
+exit
